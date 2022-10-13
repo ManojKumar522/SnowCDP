@@ -18,12 +18,10 @@ import streamlit.components.v1 as components
 
 
 # Create Session object
-def create_session_object():
-    connection_parameters = CP
-    
-    session = Session.builder.configs(connection_parameters).create()
-    print(session.sql('select current_warehouse(), current_database(), current_schema()').collect())
-    return session
+
+connection_parameters = CP
+
+session = Session.builder.configs(connection_parameters).create()
 
 
 
@@ -31,7 +29,7 @@ def create_session_object():
 
 
 # Fetching the Data from tables to DF.
-snow_df_rfm = create_session_object().table('RFM_RESULTS')
+snow_df_rfm = session.table('RFM_RESULTS')
 
 
 # In[4]:
