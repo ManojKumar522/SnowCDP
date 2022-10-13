@@ -7,15 +7,10 @@
 # Import required libraries
 
 from snowflake.snowpark.session import Session
-from snowflake.snowpark.functions import avg, sum, col,lit
 import streamlit as st
 import pandas as pd
 from Config import connection_parameters as CP
 import plotly.express as px
-import matplotlib.pyplot as plt
-from dash import Dash, dash_table
-from collections import OrderedDict
-import streamlit as st
 import streamlit.components.v1 as components
 
 
